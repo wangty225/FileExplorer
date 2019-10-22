@@ -1,0 +1,7 @@
+{
+	"AppName":"FileExplorer",
+	"Version":"V2.0",
+	"Data":"2019-07-04",
+	"Author":"Njtech Uni. CST-Software 1702 WTY",
+	"Description":"    本系统是一个使用java编程语言，通过 swing与美化包beautyeye的结合构建GUI，基于MVC架构，的文件资源管理器。通过近两星期的努力，该系统已基本具备对文件的基本操作，包括复制，剪切，删除， 查找，查看属性等相关信息等等。MVC的架构，加上多线程对耗资源时间的优化。该项目有比较好的易读性和扩展性。一些功能还可以继续完善。"
+}
