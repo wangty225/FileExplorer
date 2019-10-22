@@ -25,7 +25,7 @@ public class FileModelController {
 	private double percent = 0;
 	// operation   true为复制   false 为剪切   // , MessageWindow messageWindow
 	public void paste(String from, String to, boolean operation) throws FileNotFoundException{
-		System.out.println("开始执行paste！");
+		//System.out.println("开始执行paste！");
 		String option = (operation)?"复制":"移动";
 //		messageWindow = new MessageWindow(option);
 		
@@ -57,7 +57,7 @@ public class FileModelController {
 								e1.printStackTrace();
 							}
 							
-							System.out.println("关闭读写流。");
+							//System.out.println("关闭读写流。");
 						}
 
 						@Override
@@ -156,7 +156,7 @@ public class FileModelController {
 			else {
 				JOptionPane.showMessageDialog(null,"复制成功!","成功",JOptionPane.INFORMATION_MESSAGE);
 			}
-			System.out.println("执行paste完毕！");
+			//System.out.println("执行paste完毕！");
 			
 //			return true;
 		}catch (Exception e) {
@@ -176,7 +176,7 @@ public class FileModelController {
 			return;
 		}
 		String newFileName = JOptionPane.showInputDialog("请输入文件名：");
-		System.out.println("new file name: " + newFileName);
+		//System.out.println("new file name: " + newFileName);
 		if(newFileName==null || newFileName.equals("")) return;
 		File f = new File(path + File.separator + newFileName);
 		if(f.canRead()) {
@@ -185,7 +185,7 @@ public class FileModelController {
 		else {
 			try {
 				f.createNewFile();
-				System.out.println("new file path: " + f.getAbsolutePath());
+				//System.out.println("new file path: " + f.getAbsolutePath());
 				JOptionPane.showMessageDialog(null, f.getAbsolutePath() +" 创建成功！", "成功", JOptionPane.INFORMATION_MESSAGE);						
 			} catch (IOException e1) {
 				// TODO 自动生成的 catch 块
@@ -203,7 +203,7 @@ public class FileModelController {
 			return;
 		}
 		String newDirName = JOptionPane.showInputDialog("请输入文件夹名：");
-		System.out.println("new Dir name: " + newDirName);
+		//System.out.println("new Dir name: " + newDirName);
 		if(newDirName==null || newDirName.equals("")) return;
 		File f = new File(path + File.separator + newDirName);
 		if(f.exists()) {

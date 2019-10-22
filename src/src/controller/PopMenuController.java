@@ -62,7 +62,7 @@ public class PopMenuController {
 		int index;
 		for(index=0;index < jPopMenu.getComponentCount();index++) {
 			if((JMenuItem)e.getSource()==menuItem[index]) {
-				System.out.println(index + ": " + menuItem[index].getName());
+//				System.out.println(index + ": " + menuItem[index].getName());
 				break;
 			}
 		}
@@ -76,8 +76,8 @@ public class PopMenuController {
 			focused = FTableC.jTable.getValueAt(FTableC.jTable.getSelectedRow(), 1).toString();
 			if(focused.length() == 8 && focused.charAt(6) == ':') {  
 				// 选中的事根目录（"本地磁盘（X）："）, 8代表根目录（"本地磁盘（X）："的长度）
-				System.out.println(inputPath);
-				System.out.println(focused);
+//				System.out.println(inputPath);
+//				System.out.println(focused);
 				focused = focused.substring(5,6) + ":" + File.separator;
 			}
 		}
@@ -147,7 +147,7 @@ public class PopMenuController {
 			break;
 			
 		case 3:  // 粘贴
-			System.out.println("开始调用paste！");
+//			System.out.println("开始调用paste！");
 			if(new File(path).isFile()) {
 				JOptionPane.showMessageDialog(null, "请选择一个文件夹再粘贴！", "提示", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -179,10 +179,10 @@ public class PopMenuController {
 				}
 			}
 			else if(new File(path + focused).isDirectory()) {
-				System.out.println("删除：选择+点击 目录的文件夹" + path + focused);
+//				System.out.println("删除：选择+点击 目录的文件夹" + path + focused);
 				int confirm = JOptionPane.showConfirmDialog(null, "你确定要删除"+ path + focused + "吗？");
 				if(confirm == JOptionPane.YES_OPTION) {
-					System.out.println("执行删除1");
+//					System.out.println("执行删除1");
 					if(FileModelController.deleteDirectory(path)) {
 						JOptionPane.showMessageDialog(null, "删除成功");
 					}
@@ -194,10 +194,10 @@ public class PopMenuController {
 
 			}
 			else if(new File(path).isDirectory()) {
-				System.out.println("删除：选择 目录的文件夹" + path);
+//				System.out.println("删除：选择 目录的文件夹" + path);
 				int confirm = JOptionPane.showConfirmDialog(null, "你确定要删除目录 "+ path + " 下所有文件吗？");
 				if(confirm == JOptionPane.YES_OPTION) {
-					System.out.println("执行删除2");
+//					System.out.println("执行删除2");
 					if(FileModelController.deleteDirectory(path)) {
 						JOptionPane.showMessageDialog(null, "删除成功");
 					}

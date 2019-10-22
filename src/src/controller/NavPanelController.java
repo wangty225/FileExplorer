@@ -32,7 +32,7 @@ public class NavPanelController {
 			}
 		}
 		try {
-			treePanel.tree.clearSelection(); // 坑点，TMD。
+			treePanel.tree.clearSelection(); // 坑点，MD。
 			treePanel.tree.setSelectionPath(new TreePath(findNode.getPath()));
 			if(ifExpand)
 				treePanel.tree.expandPath(new TreePath(findNode.getPath()));

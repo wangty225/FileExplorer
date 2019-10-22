@@ -65,7 +65,7 @@ public class FileTableController {
 	
 	void update_tab(File [] files){//更新Jtable的tab动态数组的内容
 		data.clear();
-		System.out.println("files.length:" + files.length);
+//		System.out.println("files.length:" + files.length);
 		for(int j=0;j<files.length;j++) {
 			Vector<String> v = new Vector<String>();
 			v.add(" ");

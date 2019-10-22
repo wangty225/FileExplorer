@@ -71,7 +71,7 @@ public class FileTreeController {
 					if(fileDir.getFileChildCount()>0) {
 						cur_node.removeAllChildren();
 						int cnt = fileDir.getFileChildCount();
-						System.out.println("该目录下有 " + cnt + " 个项目");
+//						System.out.println("该目录下有 " + cnt + " 个项目");
 						itemNum = cnt;
 //						File [] files = fileDir.getMyListFiles();
 						for(int i=0;i<cnt;i++) {
@@ -111,7 +111,7 @@ public class FileTreeController {
 //				System.out.println("存在");
 			}
 			else if( cur_node!=rootNode ){ 
-				System.out.println("进入reloadtree的else分支");
+//				System.out.println("进入reloadtree的else分支");
 //				FileModel f1 = new FileModel(path);
 //				FileModel f[]= {f1};
 //				itemNum = 1; // 选中的是文件
@@ -130,7 +130,7 @@ public class FileTreeController {
 				try{
 					if(fileDir.getFileChildCount()>0) {
 						int cnt = fileDir.getFileChildCount();
-						System.out.println("该目录下有 " + cnt + " 个项目");
+//						System.out.println("该目录下有 " + cnt + " 个项目");
 						itemNum = cnt;
 						return 1;
 					}
@@ -147,7 +147,7 @@ public class FileTreeController {
 				}
 			}
 			else if( cur_node!=rootNode ){ 
-				System.out.println("进入reloadtree的else分支");
+//				System.out.println("进入reloadtree的else分支");
 				itemNum = 1; 
 				return 1; // 选中的是文件
 			}
@@ -174,7 +174,7 @@ public class FileTreeController {
 			    	 
 			} 
 			 else {
-				 System.out.println("null");
+//				 System.out.println("null");
 			 }
 			 return null;
 		}

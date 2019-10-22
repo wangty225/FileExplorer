@@ -208,7 +208,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 	@Override
 	public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
 		// TODO 自动生成的方法存根
-		System.out.println("1展开操作");
+//		System.out.println("1展开操作");
 //		treePanel.tree.setSelectionPath(new TreePath(event.getPath()));
 		String path = FTreeC.TreeWillExpand(event);
 
@@ -225,14 +225,14 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 	@Override
 	public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
 		// TODO 自动生成的方法存根
-		System.out.println("1折叠操作");
+//		System.out.println("1折叠操作");
 		FTreeC.TreeWillCollapse(event);
 	}
 	
 	@Override
 	public void valueChanged(TreeSelectionEvent e) {
 		// TODO 点击节点：①获得该节点写的文件或文件夹数目；②更新导航栏MyNavPanel.pathTextField显示的路径；③更新body的table
-		System.out.println("1点击改变操作");
+//		System.out.println("1点击改变操作");
 		String path = FTreeC.ValueChanged(e);
 		
 		if(path!="" && path!=null) {
@@ -251,7 +251,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 				}
 					
 			}catch(Exception e0) {
-				System.out.println("目标路径拒绝访问");
+//				System.out.println("目标路径拒绝访问");
 				JOptionPane.showMessageDialog(null, "没有权限，文件夹拒绝访问!", "位置不可用", JOptionPane.ERROR_MESSAGE);
 			}
 		}else {
@@ -294,7 +294,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.newFileItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘新建文件’菜单项");
+//				System.out.println("=======>用户选择了‘新建文件’菜单项");
 				String path  = MyNavPanel.pathTextField.getText();
 				FileModelController.createMyFile(path);
 			}
@@ -303,7 +303,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.newDirItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘新建文件夹’菜单项");
+//				System.out.println("=======>用户选择了‘新建文件夹’菜单项");
 				String path  = MyNavPanel.pathTextField.getText();
 				FileModelController.createMyDir(path);
 			}
@@ -312,7 +312,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.newWindowItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘打开新窗口’菜单项");
+//				System.out.println("=======>用户选择了‘打开新窗口’菜单项");
 				new RunExplorerThread().start();
 			}
 		});
@@ -321,10 +321,10 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘查询文件’菜单项");
+//				System.out.println("=======>用户选择了‘查询文件’菜单项");
 				String sname = JOptionPane.showInputDialog("请输入要查找的文件名：");
 				if( sname == null || sname.equals("")) {
-					System.out.println("啥都没输入");
+//					System.out.println("啥都没输查你马呢？");
 				}
 				else {			
 					new NavPanelController(tablePanel).searchAction(sname);
@@ -341,7 +341,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘退出’菜单项");
+//				System.out.println("=======>用户选择了‘退出’菜单项");
 				System.exit(1);
 			}
 		});
@@ -352,7 +352,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.copyFileItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘复制文件’菜单项");
+//				System.out.println("=======>用户选择了‘复制文件’菜单项");
 				srcFilePath = JOptionPane.showInputDialog("请输入源文件路径：");
 				destFilePath = JOptionPane.showInputDialog("请输入目标文件路径：");
 				copyFlag = true;
@@ -364,7 +364,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.moveFile.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘移动文件’菜单项");
+//				System.out.println("=======>用户选择了‘移动文件’菜单项");
 				srcFilePath = JOptionPane.showInputDialog("请输入源文件路径：");
 				destFilePath = JOptionPane.showInputDialog("请输入目标文件路径：");
 				copyFlag = false;
@@ -378,7 +378,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 			@SuppressWarnings("static-access")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘删除文件’菜单项");
+//				System.out.println("=======>用户选择了‘删除文件’菜单项");
 				String path = JOptionPane.showInputDialog("请输入查询属性的有效文件（夹）路径：");
 				if(path==null || path.equals("")) {
 					// nothing
@@ -389,10 +389,10 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 					}
 				}
 				else if(new File(path).isDirectory()) {
-					System.out.println("删除：选择 目录的文件夹" + path);
+//					System.out.println("删除：选择 目录的文件夹" + path);
 					int confirm = JOptionPane.showConfirmDialog(null, "你确定要删除目录 "+ path + " 下所有文件吗？");
 					if(confirm == JOptionPane.YES_OPTION) {
-						System.out.println("执行删除2");
+//						System.out.println("执行删除2");
 						if(FileModelController.deleteDirectory(path)) {
 							JOptionPane.showMessageDialog(null, "删除成功");
 						}
@@ -412,7 +412,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘文件属性’菜单项");
+//				System.out.println("=======>用户选择了‘文件属性’菜单项");
 				String path = JOptionPane.showInputDialog("请输入查询属性的有效文件（夹）路径：");
 				if(path!=null && (!path.equals(""))) {
 					PropertiesWindow propWindow = new PropertiesWindow();
@@ -427,7 +427,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.listViewItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘列表显示’菜单项");
+//				System.out.println("=======>用户选择了‘列表显示’菜单项");
 				
 			}
 		});
@@ -435,7 +435,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘平铺显示’菜单项");
+//				System.out.println("=======>用户选择了‘平铺显示’菜单项");
 				
 			}
 		});
@@ -444,7 +444,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.aboutSystemItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘关于本系统’菜单项");
+//				System.out.println("=======>用户选择了‘关于本系统’菜单项");
 //				AboutSystem aboutSystem = new AboutSystem();
 				new AboutWindow();
 			}
@@ -452,7 +452,7 @@ public class MainWindow extends JFrame implements ActionListener, TreeSelectionL
 		menuBar.helpItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("=======>用户选择了‘系统帮助’菜单项");
+//				System.out.println("=======>用户选择了‘系统帮助’菜单项");
 				new HelpWindow();
 				
 			}
