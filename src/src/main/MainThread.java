@@ -1,11 +1,10 @@
 package main;
 
-/**
- * 
- * @author Bingooo
- * @date 2019/7/9
- */
-// src中的源文件，共计约2700行。
+/** 
+* @author 作者 Your-Name: 
+* @version 创建时间：2019年7月8日 下午2:29:46 
+* 类说明  src中源文件，共计约2700行。
+*/
 public class MainThread {
 	public static void main(String [] args) {
 		RunExplorerThread r = new RunExplorerThread();
