@@ -141,7 +141,7 @@ FileModelController()则包含一些可以用于Table更新显示成员方法。
 主页
 
 
-![Image text](https://raw.githubusercontent.com/Mr-Toxic/FileExplorer/master/image-folder/demo_1.png)
+![Image text](https://raw.githubusercontent.com/Mr-Toxic/FileExplorer/master/image-folder/demo_01.png)
 
 
 弹出菜单页
